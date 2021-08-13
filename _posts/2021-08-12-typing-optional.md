@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "typing.Optional"
-# date:   2021-08-12 23:54:00 +0100
-categories:
+categories: Python
 ---
 
 # Dear morons...
