@@ -2,6 +2,7 @@
 layout: post
 title:  "typing.Optional"
 categories: Python
+permalink: /Python/typing.Optional
 ---
 
 # Dear morons...
