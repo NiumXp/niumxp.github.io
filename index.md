@@ -4,6 +4,6 @@ layout: home
 permalink: /
 ---
 
-# Welcome
+# Boas vindas
 
-Bla bla bla bla. Bla bla bla bla bla bla bla bla.
+Aqui eu posto e falo sobre coisas legais do que eu já aprendi em programação para que talvez outras pessoas leiam...?
