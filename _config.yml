@@ -1,11 +1,11 @@
 site: Sidey
-url: https://niumxp.github.io
-title: Nium
+url:
+title: NiumXp
 description: :D
 
 permalink: pretty
 
-baseurl: "https://niumxp.github.io"
+baseurl: ""
 
 highlighter: none
 
