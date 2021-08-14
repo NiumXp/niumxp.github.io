@@ -5,10 +5,10 @@ categories: Python
 permalink: /python/typing-Optional
 ---
 
-# typing.Optional
-
 Muita gente acaba utilizando e dizendo que `typing.Optional` - em funções - é para dizer que o parâmetro é opcional.
 De fato é, mas dizem no sentido de ter um valor padrão, o que está totalmente errado!
+
+---
 
 ```py
 def pow(x, y: Optional[int] = 2) -> int:
