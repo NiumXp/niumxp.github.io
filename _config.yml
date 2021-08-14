@@ -1,9 +1,2 @@
 remote_theme: ronv/sidey
-# listen_for_clients_preferred_style: true
-# style: light
 
-header_pages:
-  - index.md
-  - about.md
-
-footer: '<a href="https://github.com/NiumXp">https://github.com/NiumXp</a>'
