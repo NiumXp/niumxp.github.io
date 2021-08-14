@@ -1,5 +1,1 @@
-remote_theme: niklasbuschmann/contrast@v2.11
-
-plugins:
-  - jekyll-remote-theme
-  
+remote_theme: Simpleyyt/jekyll-theme-next
