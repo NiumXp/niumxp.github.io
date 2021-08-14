@@ -1,2 +1,5 @@
-remote_theme: ronv/sidey
+remote_theme: niklasbuschmann/contrast@v2.11
 
+plugins:
+  - jekyll-remote-theme
+  
