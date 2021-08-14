@@ -1,11 +1,11 @@
 site: Sidey
-url: #yoururl
-title: Sidey
-description: Simple and minimalistic jekyll blogging theme.
+url: https://niumxp.github.io
+title: Nium
+description: :D
 
 permalink: pretty
 
-baseurl: ""
+baseurl: "https://niumxp.github.io"
 
 highlighter: none
 
