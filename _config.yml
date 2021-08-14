@@ -1,1 +1,6 @@
-remote_theme: Simpleyyt/jekyll-theme-next
+remote_theme: ronv/sidey
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap  
