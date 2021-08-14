@@ -1,6 +1,6 @@
-remote_theme: b2a3e8/jekyll-theme-console
-listen_for_clients_preferred_style: true
-style: light
+remote_theme: ronv/sidey
+# listen_for_clients_preferred_style: true
+# style: light
 
 header_pages:
   - index.md
