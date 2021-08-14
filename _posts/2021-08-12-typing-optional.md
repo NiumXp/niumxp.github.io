@@ -6,7 +6,7 @@ permalink: /python/typing-Optional
 ---
 
 # typing.Optional
-
+<br>
 
 Muita gente acaba utilizando e dizendo que `typing.Optional` - em funções - é para dizer que o parâmetro é opcional.
 De fato é, mas dizem no sentido de ter um valor padrão, o que está totalmente errado!
@@ -15,6 +15,7 @@ De fato é, mas dizem no sentido de ter um valor padrão, o que está totalmente
 def pow(x, y: Optional[int] = 2) -> int:
     return x*y
 ```
+<br>
 
 A assinatura está totalmente errada em comparação à implementação!
 Você pode até pensar que está certa dizendo algo como:
@@ -31,7 +32,7 @@ Mas a implementação claramente daria erro, então, a assinatura correta para a
 ```py
 def pow(x, y: int = 2) -> int:
 ```
-
+<br>
 
 Perfeito! Mas e como ficaria a implementação com um `Optional[T]`? Muito simples.
 
@@ -42,7 +43,7 @@ def pow(x, y: Optional[int] = None) -> int:
 
     return x*y
 ```
-
+<br>
 
 Quando anotamos um parâmetro dizendo que ele será opcional, estamos na verdade dizendo que a função se comportará totalmente diferente com ou sem o parâmetro -
 como se fossem *flags* de CLIs, tipo o `-v` do `docker-compose up`!

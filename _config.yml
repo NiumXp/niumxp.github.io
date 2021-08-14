@@ -4,5 +4,5 @@ header_pages:
   - index.md
   - about.md
 
-style: light
+style: ligth
 listen_for_clients_preferred_style: true
