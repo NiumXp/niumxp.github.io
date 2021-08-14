@@ -158,43 +158,39 @@ strong, b {
 }
 
 main {
-	display:flex;
-	flex-wrap:wrap;
-	max-width:60rem;
-	margin:2rem auto;
-	padding:1rem;
+	display: flex;
+	flex-wrap: wrap;
+	max-width :60rem;
+	margin: 2rem auto;
+	padding: 1rem;
 }
-
 
 @media screen and (max-width: 45rem ) {
-header li {
-    display: inline;
-	margin-right: 1rem;
-}
-.logo {
-	padding-bottom: 1rem;
-}
-header ul {
-	border-bottom: 1px solid #edf2f7;
-	padding-bottom: 2rem;	
-}
-nav ul {
-    border-right: 0px;
-}
-
-.photos ul {
-	margin-top: 0.5rem;
-}
-
+	header li {
+		display: inline;
+		margin-right: 1rem;
+	}
+	.logo {
+		padding-bottom: 1rem;
+	}
+	header ul {
+		border-bottom: 1px solid #edf2f7;
+		padding-bottom: 2rem;	
+	}
+	nav ul {
+		border-right: 0px;
+	}
+	.photos ul {
+		margin-top: 0.5rem;
+	}
 }
 
 section {
-	flex-basis:0;
-	flex-grow:999;
-	min-width:70%;
-	display:flex;
-	flex-direction:column;
-	
+	flex-basis: 0;
+	flex-grow: 999;
+	min-width: 70%;
+	display: flex;
+	flex-direction: column;
 }
 
 figcaption {

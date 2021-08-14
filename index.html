@@ -4,24 +4,26 @@ title: https://niumxp.github.io
 ---
 
 <section>
-    <h2>Boas vindas</h2>
+    <section>
+        <h2>Boas vindas</h2>
 
-    <p>Aqui eu posto e falo sobre coisas legais do que eu já aprendi em programação para que talvez outras pessoas leiam...?</p>
-</section>
+        <p>Aqui eu posto e falo sobre coisas legais do que eu já aprendi em programação para que talvez outras pessoas leiam...?</p>
+    </section>
 
-<section class="posts">
-    <h2>Posts</h2>
+    <section class="posts">
+        <h2>Posts</h2>
 
-    <ul>
-    {% for post in site.posts %}
-        <li>
-            <a href="{{ site.baseurl }}{{ post.url }}">
-                {{ post.title }}
-            </a>
-            <time datetime="{{ post.date | date_to_xmlschema }}">
-                {{ post.date | date: "%m-%d-%Y" }}
-            </time>
-        </li>
-    {% endfor %}
-    </ul>
+        <ul>
+        {% for post in site.posts %}
+            <li>
+                <a href="{{ site.baseurl }}{{ post.url }}">
+                    {{ post.title }}
+                </a>
+                <time datetime="{{ post.date | date_to_xmlschema }}">
+                    {{ post.date | date: "%m-%d-%Y" }}
+                </time>
+            </li>
+        {% endfor %}
+        </ul>
+    </section>
 </section>
