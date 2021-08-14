@@ -197,10 +197,12 @@ figcaption {
     font-size: smaller;
 }
 
-.author img {
-	max-width: 150px;
+.author {
+	display: flex;
+	text-decoration: none;
 }
 
-.author a {
-	text-decoration: none;
+.author img {
+	max-width: 100px;
+	border-radius: 50%;
 }
