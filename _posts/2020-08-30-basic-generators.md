@@ -20,7 +20,7 @@ for index, element in enumerate(list_):
 ### Tá, mas e aí...?
 Bom, imagine que precisemos fazer uma operação nos `x` primeiros itens de uma lista e posteriormente nos próximos que aparecerem.
 
-Você pensou em criar uma variável contadora certo? Fazer isso é um grande problema, teria de haver um monte de `ifs` checando essa variável pra fazer o que queremos, além de ter vários `counter += 1` também...
+Você provavelmente pensou em criar uma variável contadora certo? É, fazer isso é um grande problema, teria de haver um monte de `ifs` checando essa variável pra fazer o que queremos, além de ter vários `counter += 1` também...
 
 Para evitar isso, existe um padrão de projeto chamado [*Iterator*](https://refactoring.guru/pt-br/design-patterns/iterator) que já está [sintaticamente açucarado](https://pt.wikipedia.org/wiki/Açúcar_sintático) inserido na linguagem.
 
@@ -37,9 +37,11 @@ number = next(iterator)
 print(number)  # 3
 ```
 
+> Toda vez que escrevemos comentários em uma linha de código, sempre colocamos dois espaços entre o código e o `#`.
+
 Aquele `iter` é de *iterate*, ele irá retornar um objeto iterador sobre o nosso `range(0, 10)` - e por curiosidade, o iterador retornado se chama `range_iterator` e é escrito totalmente em C para ter uma performance maior, outros objetos *built-in*s também tem esse carinho especial.
 
-Assim que escrevemos `next(iterator)` estavamos dizendo para o iterador ir para o próximo estado - que por consequência retorna o valor desse estado se não estiver exausto. Na primeira execução fomos para o primeiro estado e tivemos o valor `1`, no segundo o valor `2` e no terceiro o valor `3`.
+Assim que escrevemos `next(iterator)` fazemos o iterador ir para o próximo estado dele - que por consequência retorna o valor desse estado se não estiver exausto. Na primeira execução fomos para o primeiro estado e obtivemos o valor `1`, no segundo o valor `2` e no terceiro o valor `3`.
 
 ### O que acontece quando chegamos no último valor de um iterador?
 Simples, ele fica exausto e enraiza um erro. Por exemplo:
@@ -73,12 +75,12 @@ def generator():
     yield 7
     yield 5
 ```
-Essa palavra `yield` significa produzir, tecnicamente dizemos para a nossa função produzir numeros.
-Assim que utilizamos essa palavra dentro de uma função, ela automaticamente retorna um gerador - nada é executado dentro dele até mudarmos consumirmos aos poucos o gerador.
+Essa palavra `yield` significa produzir - tecnicamente dizemos para as funções produzirem algo, no nosso caso são números!
+Assim que utilizamos essa palavra dentro de uma função, ela automaticamente retorna um gerador - nada é executado dentro dela até consumirmos o gerador aos poucos.
 
-Ainda é possível utilizar `return` dentro da função, mas não terá o mesmo efeito que estamos acostumados. Usar um `return` irá exaustar o gerador, se tentarmos consumir ele, teremos o erro `StopIteration` mostrando o que pedimos para retornar.
+Ainda é possível utilizar `return` dentro de uma função geradora, mas não terá o mesmo efeito que estamos acostumados. Usar um `return` irá exaustar o gerador, se tentarmos consumir ele, teremos o erro `StopIteration` mostrando o que pedimos para retornar.
 
-Vamos executar o gerador em um `for` e ver o que acontece.
+Vamos executar a função geradora de antes em um `for` e ver o que acontece.
 ```py
 for number in generator():
     print(number)
