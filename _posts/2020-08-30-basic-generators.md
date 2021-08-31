@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "O básico de geradores em Python"
