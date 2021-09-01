@@ -44,7 +44,7 @@ Aquele `iter` é de *iterate*, ele irá retornar um objeto iterador sobre o noss
 Assim que escrevemos `next(iterator)` fazemos o iterador ir para o próximo estado dele - que por consequência retorna o valor desse estado se não estiver exausto. Na primeira execução fomos para o primeiro estado e obtivemos o valor `1`, no segundo o valor `2` e no terceiro o valor `3`.
 
 ### O que acontece quando chegamos no último valor de um iterador?
-Simples, ele fica exausto e enraiza um erro. Por exemplo:
+Simples, ele fica exausto e enraíza um erro. Por exemplo:
 ```py
 distance = range(3)
 iterator = iter(distance)
@@ -64,10 +64,12 @@ Traceback (most recent call last):
 StopIteration
 ```
 
+> Isso não acontece com todos os iteradores que existem! Alguns são "infinitos" que nem o `cycle` da biblioteca `itertools`.
+
 ### E como eu crio um gerador?
 Usando funções! Também há outras formas, mas não vem ao caso.
 
-Da uma olhada nessa função que geradora:
+Da uma olhada nessa função geradora:
 ```py
 def generator():
     yield 3
@@ -78,7 +80,7 @@ def generator():
 Essa palavra `yield` significa produzir - tecnicamente dizemos para as funções produzirem algo, no nosso caso são números!
 Assim que utilizamos essa palavra dentro de uma função, ela automaticamente retorna um gerador - nada é executado dentro dela até consumirmos o gerador aos poucos.
 
-Ainda é possível utilizar `return` dentro de uma função geradora, mas não terá o mesmo efeito que estamos acostumados. Usar um `return` irá exaustar o gerador, se tentarmos consumir ele, teremos o erro `StopIteration` mostrando o que pedimos para retornar.
+> Ainda é possível utilizar `return` dentro de uma função geradora, mas não terá o mesmo efeito que estamos acostumados. Usar um `return` irá exaustar o gerador, se tentarmos consumir ele, teremos o erro `StopIteration` mostrando o que pedimos para retornar.
 
 Vamos executar a função geradora de antes em um `for` e ver o que acontece.
 ```py
