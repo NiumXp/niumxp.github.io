@@ -9,7 +9,7 @@ Decoradores são objetos que transformam, embrulham e/ou não fazem nada na decl
 
 Assim como o [*Iterator*](https://refactoring.guru/pt-br/design-patterns/iterator) - que eu citei no último post sobre [o básico de geradores](https://niumxp.github.io/python/basic-of-generators), o [*Decorator*](https://refactoring.guru/pt-br/design-patterns/decorator) também é um padrão de projeto [sintaticamente açucarado](https://pt.wikipedia.org/wiki/Açúcar_sintático) em Python para facilitar muita coisa e deixar o código beeem mais bonito!
 
-Você provavelmente já deve ter visto algum decorador em alguma classe. Dê uma olhada no `@property` do seguinte código:
+Você provavelmente já deve ter visto algum decorador em alguma classe por aí. Da uma olhada no `@property` do seguinte código:
 
 ```py
 import math
@@ -30,7 +30,7 @@ Aquilo é um decorador. Sempre que houver **nomes prefixados com `@` acima de um
 > Quando o objeto `property` é decorado em algum método - ou em algum objeto -, ele é embrulhado para dentro de um descritor especial - escrito totalmente em C.
 
 ### Mais exemplos
-Decoradores são muito bonitos e estes não poderiam ficar de fora!
+Decoradores são muito bonitos e estes simples exemplos aqui não poderiam ficar de fora!
 
 ```py
 @perfect
@@ -44,12 +44,12 @@ def pudding():
     pass
 ```
 
-> Mostrando dessa forma nem da pra se imaginar o quão feio isso pode ficar...
+> Mostrando dessa forma nem da pra se imaginar o quão feio decoradores podem ficar...
 
-Podemos decorar uma classe e função com diversos decoradores! - o máximo de decoradores que eu já vi sendo utilizado na mesma declaração foi em torno de 6 ou 7, é bem dificil ultrapassar de 3 decoradores.
+Podemos decorar uma classe e função com diversos decoradores! - o máximo de decoradores que eu cheguei a ver sendo utilizado na mesma declaração foi em torno de 6 ou 7, é bem dificil ultrapassar de 3 decoradores.
 
 ### E como essa **maravilha** funciona!!?
-Ótima pergunta meu caro editor de texto! Quando escrevemos uma função decorada como esta:
+Ótima pergunta meu caro editor de texto! Quando escrevemos uma função decorada que nem esta aqui:
 
 ```py
 @lovely
@@ -57,7 +57,7 @@ def nium():
     pass
 ```
 
-Estamos na verdade escrevendo de forma mais bonita o seguinte:
+Estamos na verdade escrevendo de forma mais bonita ou fácil o seguinte:
 
 ```py
 def nium():
@@ -84,7 +84,7 @@ print(pudding)
 None
 ```
 
-A função `pudding` foi criada e passada para o `print`, que a mostrou no terminal, daí o `print` retornou `None`, que foi salvo em `pudding`, depois a gente imprime o valor de `pudding` que é `None`.
+A função `pudding` foi criada e passada para o `print`, que logo foi mostrada no terminal, daí o `print` retornou `None`, que foi salvo em `pudding`, depois a gente imprime o valor de `pudding` que é `None`.
 Ou seja, em outras palavras ("códigos" soaria estranho):
 
 ```py
@@ -115,7 +115,7 @@ def pudding():
 puddinng = bool(print(pudding))
 ```
 
-### Mão na massa ~~sem ser a da pizza~~
+### Mão na massa ~~adoro pizza~~
 É possível criar um decorador para diversas coisas e, por que não um que imprime o retorno de uma função?
 
 ```py
@@ -136,7 +136,9 @@ somar(1, 1)  # 2
 somar(2, 5)  # 7
 ```
 
-É bem comum vermos [*closure*](https://en.wikipedia.org/wiki/Closure_(computer_programming))s, [*wrapper*](https://en.wikipedia.org/wiki/Wrapper_function)s e [funções aninhadas](https://en.wikipedia.org/wiki/Nested_function) dentro de decoradores, provavelmente você irá ver muito um código deste estilo nos decoradores:
+---
+
+É bem comum vermos [*closure*](https://en.wikipedia.org/wiki/Closure_(computer_programming))s, [*wrapper*](https://en.wikipedia.org/wiki/Wrapper_function)s e [funções aninhadas](https://en.wikipedia.org/wiki/Nested_function) dentro de decoradores, provavelmente você irá ver muito um código no seguinte estilo dentro deles:
 
 ```py
 def decorator(function):
@@ -148,7 +150,9 @@ def decorator(function):
 
 Basicamente o `wrapper` embrulha `function` para fazer algo a mais.
 
-Fazer o embrulhamento de uma função dentro de um decorador e a retornar, significa mudar a função que nos foi passada por outra, se precisarmos acessar a documentação de `function`, só conseguiremos acessar a de `wrapper`.
+---
+
+Fazer o embrulhamento de uma função dentro de um decorador e o retornar  significa mudarmos a função que nos foi passada por outra e, se precisarmos acessar a documentação de `function` por exemplo, só conseguiremos acessar a de `wrapper`.
 Para evitar esse problema existe o decorador `wraps` da biblioteca `functools`, que é sensacional!!
 
 ```py
@@ -174,9 +178,9 @@ print(pudding.__name__)  # pudding
 Tente remover a linha 5 e ver o que acontece!
 
 ### Decoradores com parâmetros...?
-É possível passar parâmetros para os decoradores - na verdade, o que acontece é que nós podemos resolver uma função na sintaxe do decorator, resultando geralmente em uma *closure* que acaba sendo o decorador de fato - para que possamos mudar o comportamento dele, por exemplo.
+É possível passar parâmetros para os decoradores - na verdade, o que acontece é que nós podemos resolver uma função na sintaxe do decorator, resultando geralmente em uma *closure*, que acaba sendo o decorador de fato - para que possamos mudar o comportamento dele, por exemplo.
 
-Imagine que queiramos criar um decorador que embrulhe uma função e retorne o que passarmos e o que foi executado pela função embrulhada. Teriamos algo mais ou menos assim:
+Imagine que queiramos criar um decorador que embrulhe uma função fazendo com que ela retorne o que passarmos e o que foi executado por ela mesma. Teriamos algo mais ou menos assim:
 
 ```py
 def retornar(valor):
@@ -189,7 +193,7 @@ def retornar(valor):
     return decorator
 ```
 
-Basicamente criamos uma função chamada `retornar` que recebe `valor` e nos retorna uma outra função chamada `decorator` que recebe uma função e a embrulha com outra função fazendo que com que ela retorne `valor` e o próprio resultado da função embrulhada.
+Basicamente criamos uma função chamada `retornar` que recebe `valor` e, nos retorna uma outra função chamada `decorator` que recebe uma função e a embrulha com outra função fazendo que com que ela retorne `valor` e o próprio resultado da função embrulhada.
 
 ```py
 @retornar(2)
@@ -201,7 +205,7 @@ resultado = somar(2, 4)
 print(resultado)  # (2, 6)
 ```
 
-Essa questão de "decoradores com parâmetros" são bem difíceis de se entender na primeira vez, tente colocar alguns `print`s e/ou até tentar desfazer o decorador para entender o fluxo de execução!
+Essa questão de "decoradores com parâmetros" são bem difíceis de se entender na primeira vez, tente colocar alguns `print`s e/ou até tentar desfazer o decorador para entender melhor o fluxo de execução!
 
 ### Suco de laranja
 A partir do Python 3.9, a gramática dos decoradores foram relaxadas, sendo possível passar expressões ao invés de apenas nomes e argumentos - igual à chamada de uma função.
@@ -233,7 +237,7 @@ def on_click(button):
     pass
 ```
 
-Ficava muito ruim de se ler, além de que vários decoradores eram criados... Com essa mudança,podemos deixar o código da seguinte maneira:
+Ficava/Fica muito ruim de se ler, além de que vários decoradores eram/são criados... Com essa mudança,podemos deixar o código da seguinte maneira:
 
 ```py
 @buttons[5].button.events.click
