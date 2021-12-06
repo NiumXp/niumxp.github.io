@@ -5,11 +5,11 @@ categories: Python
 permalink: /python/one-line
 ---
 
-Alguns *snippets* simplres de Python para escrever *code golf* em Python.
+Alguns *snippets* simples para escrever *code golf* em Python.
 
 ---
 
-Escrever os nomes do métodos leva muito tempo, use o `assignment`!
+Escrever os nomes do métodos leva muito tempo, use o `assignment` a seu favor!
 
 ```python
 S = [1, 2, 3]
