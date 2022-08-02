@@ -20,8 +20,8 @@ _, *S = S       # list.pop(..., 0)
 S += 5,         # list.append(..., 5)
                 # list.extend(..., (5,))
 
+S[:2] += 3,    # list.insert(..., 2, 3)
 S[:2] += [3]
-S[:2] +=  3,    # list.insert(..., 2, 3)
 ```
 
 ---
