@@ -20,7 +20,8 @@ _, *S = S       # list.pop(..., 0)
 S += 5,         # list.append(..., 5)
                 # list.extend(..., (5,))
 
-S[:2] += 3      # list.insert(..., 2, 3)
+S[:2] += 3,     # list.insert(..., 2, 3)
+S[:2] += [3]
 ```
 
 ---
@@ -84,7 +85,7 @@ D = {1: 0,
      2: 0,
      3: 0}  # dict
 
-T = (*D,),  # tuple
+T = (*D,)   # tuple
 S = {*D}    # set
 L = [*D]    # list
 ```
