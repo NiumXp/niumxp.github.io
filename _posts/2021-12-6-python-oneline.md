@@ -85,7 +85,7 @@ D = {1: 0,
      2: 0,
      3: 0}  # dict
 
-T = (*D,),  # tuple
+T = (*D,)   # tuple
 S = {*D}    # set
 L = [*D]    # list
 ```
